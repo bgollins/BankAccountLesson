@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>EpiBank</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" id="NewAccountInput">
+          <h2>Register a new account</h2>
+          <form>
+            <label for="NewName">Name:</label>
+            <input type="text" name="NewName" id="NewName">
+            <p></p>
+            <label for="InitialDeposit">Initial Deposit:</label>
+            <input type="number" name="InitialDeposit" id="InitialDeposit">
+          </form>
+        </div>
+        <div class="col-md-6" id="DepositOrWithdraw">
+          <h2>Deposit or Withdraw funds</h2>
+          <form>
+            <label for="DepositMoney">Deposit Amount:</label>
+            <input type="number" name="DepositMoney" id="DepositMoney">
+            <p></p>
+            <label for="WithdrawMoney">Withdrawal Amount:</label>
+            <input type="number" name="WithdrawMoney" id="WithdrawMoney">
+          </form>
+        </div>
+      </div>
+      <div class="row" id="CurrentBalanceArea">
+        <div class="col-md-12">
+          <h3>Current Balance:</h3>
+          <span id="CurrentBalance"></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
