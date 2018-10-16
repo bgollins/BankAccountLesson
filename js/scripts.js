@@ -15,6 +15,13 @@ BankAccount.prototype.deposit = function(depositAmount){
   return bankAccounts[0].currentBalance;
 }
 
+function resetFields() {
+  $("input#NewName").val("")
+  $("input#InitialDeposit").val("0")
+  $("input#DepositMoney").val("0")
+  $("input#WithdrawMoney").val("0")
+}
+
 var bankAccounts = [];
 var bankAccountsIndex = 0;
 
@@ -32,6 +39,7 @@ $(document).ready(function() {
     console.log(newBankAccount);
     $("#CurrentBalance").text("$" + bankAccounts[0].currentBalance);
     $("#CurrentBalanceArea").show();
+    resetFields();
   });
 
   $("form.DepositOrWithdraw").submit(function(event) {
@@ -43,5 +51,6 @@ $(document).ready(function() {
     console.log("This is the current balance after submission: " + bankAccounts[0].currentBalance);
     $("#CurrentBalance").text("$" + bankAccounts[0].currentBalance);
     $("#CurrentBalanceArea").show();
+    resetFields();
   });
 });
