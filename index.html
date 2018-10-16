@@ -23,19 +23,20 @@
             <input type="text" name="NewName" id="NewName">
             <p></p>
             <label for="InitialDeposit">Initial Deposit:</label>
-            <input type="number" name="InitialDeposit" id="InitialDeposit">
+            <input type="number" name="InitialDeposit" id="InitialDeposit" value="0">
             <p></p>
             <button type="submit" class="btn btn-danger" id="submitNewBankAccount">Submit</button>
           </form>
         </div>
         <div class="col-md-6" id="DepositOrWithdraw">
           <h2>Deposit or Withdraw funds</h2>
-          <form>
+          <form class="DepositOrWithdraw">
             <label for="DepositMoney">Deposit Amount:</label>
-            <input type="number" name="DepositMoney" id="DepositMoney">
+            <input type="number" name="DepositMoney" id="DepositMoney" value="0">
             <p></p>
             <label for="WithdrawMoney">Withdrawal Amount:</label>
-            <input type="number" name="WithdrawMoney" id="WithdrawMoney">
+            <input type="number" name="WithdrawMoney" id="WithdrawMoney" value="0">
+            <button type="submit" name="DepositOrWithdraw">Submit Deposit or Withdrawal</button>
           </form>
         </div>
       </div>

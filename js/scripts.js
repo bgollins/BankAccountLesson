@@ -5,12 +5,14 @@ function BankAccount(name, initialDeposit){
 }
 
 
-BankAccount.prototype.withdrawal = function(withdrawalAmount, index){
-  return BankAccount.currentBalance - withdrawalAmount;
+BankAccount.prototype.withdrawal = function(withdrawalAmount){
+  bankAccounts[0].currentBalance -= withdrawalAmount;
+  return bankAccounts[0].currentBalance;
 }
 
-BankAccount.prototype.withdrawal = function(depositAmount, index){
-  return BankAccounts[index].currentBalance + depositAmount;
+BankAccount.prototype.deposit = function(depositAmount){
+    bankAccounts[0].currentBalance += depositAmount;
+  return bankAccounts[0].currentBalance;
 }
 
 var bankAccounts = [];
@@ -28,6 +30,18 @@ $(document).ready(function() {
     console.log("This is the initial deposit: " + newBankAccount.currentBalance);
     bankAccounts.push(newBankAccount);
     console.log(newBankAccount);
+    $("#CurrentBalance").text("$" + bankAccounts[0].currentBalance);
+    $("#CurrentBalanceArea").show();
   });
 
+  $("form.DepositOrWithdraw").submit(function(event) {
+    event.preventDefault();
+    var inputDepositMoney = parseInt($("input#DepositMoney").val());
+    var inputWithdrawMoney =  parseInt($("input#WithdrawMoney").val());
+    bankAccounts[0].deposit(inputDepositMoney);
+    bankAccounts[0].withdrawal(inputWithdrawMoney);
+    console.log("This is the current balance after submission: " + bankAccounts[0].currentBalance);
+    $("#CurrentBalance").text("$" + bankAccounts[0].currentBalance);
+    $("#CurrentBalanceArea").show();
+  });
 });
