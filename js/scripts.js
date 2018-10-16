@@ -2,6 +2,7 @@
 
 
 // UI logic
-$(document).ready(fucntion(event){
+$(document).ready(function(event){
+  event.preventDefault();
   console.log("I'm Ready");
 });
